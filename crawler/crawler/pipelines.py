@@ -10,4 +10,7 @@ from itemadapter import ItemAdapter
 
 class CrawlerPipeline:
     def process_item(self, item, spider):
+        item['game_name'] = item['game_name'].replace("®", "")
+        item['game_name'] = item['game_name'].replace("\"", "")
+        print("Item:" + item['game_name'])
         return item
