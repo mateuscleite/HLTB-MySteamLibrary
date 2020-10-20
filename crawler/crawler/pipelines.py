@@ -6,11 +6,10 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+import re
 
 class CrawlerPipeline:
     def process_item(self, item, spider):
-        item['game_name'] = item['game_name'].replace("®", "")
-        item['game_name'] = item['game_name'].replace("\"", "")
-        print("Item:" + item['game_name'])
+
+        print(item)
         return item
